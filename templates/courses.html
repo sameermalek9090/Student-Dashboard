@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Courses | Way To Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f6f9;
+            margin: 0;
+            font-family: system-ui;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: white;
+            border-right: 1px solid #e5e5e5;
+            padding: 20px;
+        }
+
+        .sidebar img {
+            width: 130px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            border-radius: 8px;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #eef2ff;
+            color: #4f46e5;
+        }
+
+
+        /* MAIN */
+
+        .main {
+            margin-left: 240px;
+            padding: 35px;
+        }
+
+        .page-title {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .page-sub {
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+
+        /* COURSE CARD */
+
+        .course-card {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: 0.25s;
+            border: 1px solid #f1f1f1;
+        }
+
+        .course-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* ICON */
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .python {
+            background: #e7f0ff;
+            color: #2d6cdf;
+        }
+
+        .fullstack {
+            background: #e8fff4;
+            color: #18a36c;
+        }
+
+        .mern {
+            background: #fff3e6;
+            color: #ff7a00;
+        }
+
+        .ai {
+            background: #f4e9ff;
+            color: #7b3ff2;
+        }
+
+        .data {
+            background: #ffe8ef;
+            color: #ff3b6b;
+        }
+
+        .web {
+            background: #e8fbff;
+            color: #00a6c7;
+        }
+
+
+        /* TEXT */
+
+        .course-title {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .course-desc {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+
+        /* TAGS */
+
+        .tag {
+            font-size: 12px;
+            background: #f1f3f5;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+        }
+
+
+        /* FOOTER */
+
+        .meta {
+            font-size: 13px;
+            color: #6c757d;
+            margin-top: 15px;
+        }
+
+        .btn-course {
+            margin-top: 15px;
+            border-radius: 10px;
+            padding: 6px 16px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar text-center" id="sidebar">
+        <div class="sidebar-logo">
+            <img src="{% static 'images/logo.png' %}" alt="Way To Web">
+        </div>
+        <hr>
+
+        <a href="/dashboard/">Dashboard</a>
+        <a href="/students/">Students</a>
+        <a class="active" href="/courses/">Courses</a>
+        <a href="/fees/">Fees</a>
+        <a href="/visiting/">visiting</a>
+        <a href="/JoiningStudents/">JoiningStudents</a>
+        <a href="/">Reports</a>
+        <a href="/">Logout</a>
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <div class="page-title">IT Courses</div>
+        <div class="page-sub">Professional training programs for modern developers</div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Python -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="icon python">🐍</div>
+
+                    <div class="course-title">Python Development</div>
+
+                    <div class="course-desc">
+                        Master Python programming from fundamentals to advanced automation.
+                    </div>
+
+                    <div>
+
+                        <span class="tag">Beginner</span>
+                        <span class="tag">Backend</span>
+                        <span class="tag">Automation</span>
+
+                    </div>
+
+                    <div class="meta">
+                        ⏱ Duration: 3 Months<br>
+                        👨‍🎓 Students: 120+
+                    </div>
+
+                    <button class="btn btn-outline-primary btn-course">
+                        View Curriculum
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Full Stack -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="icon fullstack">💻</div>
+
+                    <div class="course-title">Full Stack Development</div>
+
+                    <div class="course-desc">
+                        Learn HTML, CSS, JavaScript, Django and build complete web applications.
+                    </div>
+
+                    <div>
+
+                        <span class="tag">Frontend</span>
+                        <span class="tag">Backend</span>
+                        <span class="tag">Projects</span>
+
+                    </div>
+
+                    <div class="meta">
+                        ⏱ Duration: 6 Months<br>
+                        👨‍🎓 Students: 80+
+                    </div>
+
+                    <button class="btn btn-outline-success btn-course">
+                        View Curriculum
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MERN -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="icon mern">⚛</div>
+
+                    <div class="course-title">MERN Stack</div>
+
+                    <div class="course-desc">
+                        Develop modern web apps using MongoDB, Express, React and Node.
+                    </div>
+
+                    <div>
+
+                        <span class="tag">React</span>
+                        <span class="tag">Node</span>
+                        <span class="tag">MongoDB</span>
+
+                    </div>
+
+                    <div class="meta">
+                        ⏱ Duration: 5 Months<br>
+                        👨‍🎓 Students: 65+
+                    </div>
+
+                    <button class="btn btn-outline-warning btn-course">
+                        View Curriculum
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="icon ai">🤖</div>
+
+                    <div class="course-title">Artificial Intelligence</div>
+
+                    <div class="course-desc">
+                        Learn machine learning, neural networks and AI development.
+                    </div>
+
+                    <div>
+
+                        <span class="tag">ML</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Deep Learning</span>
+
+                    </div>
+
+                    <div class="meta">
+                        ⏱ Duration: 4 Months<br>
+                        👨‍🎓 Students: 45+
+                    </div>
+
+                    <button class="btn btn-outline-secondary btn-course">
+                        View Curriculum
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Data Science -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="icon data">📊</div>
+
+                    <div class="course-title">Data Science</div>
+
+                    <div class="course-desc">
+                        Analyze data using Python, Pandas, NumPy and visualization tools.
+                    </div>
+
+                    <div>
+
+                        <span class="tag">Python</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">ML</span>
+
+                    </div>
+
+                    <div class="meta">
+                        ⏱ Duration: 4 Months<br>
+                        👨‍🎓 Students: 70+
+                    </div>
+
+                    <button class="btn btn-outline-danger btn-course">
+                        View Curriculum
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Web Design -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="course-card">
+
+                    <div class="icon web">🎨</div>
+
+                    <div class="course-title">Web Design</div>
+
+                    <div class="course-desc">
+                        Learn UI design, responsive layouts, Bootstrap and modern UX.
+                    </div>
+
+                    <div>
+
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">UI/UX</span>
+
+                    </div>
+
+                    <div class="meta">
+                        ⏱ Duration: 2 Months<br>
+                        👨‍🎓 Students: 90+
+                    </div>
+
+                    <button class="btn btn-outline-info btn-course">
+                        View Curriculum
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

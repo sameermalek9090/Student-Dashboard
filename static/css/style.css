@@ -1,0 +1,26 @@
+/* body { background: #fafafa; }
+.card { border-radius: 6px; }
+canvas { max-width: 100%; } */
+
+
+
+
+body {
+            background: #f1f3f6;
+        }
+        .form-card {
+            max-width: 850px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        }
+        .submit-btn {
+            background: #0066ff;
+            color: white;
+            padding: 12px;
+            font-size: 17px;
+            border-radius: 8px;
+            width: 100%;
+            border: none;
+        }
