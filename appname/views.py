@@ -156,6 +156,16 @@ def dashboard(request):
 
     installments = Installment.objects.select_related('student').order_by('-payment_date')
 
+    today = timezone.now()
+    one_month_ago = today - timedelta(days=30)
+    two_month_ago = today - timedelta(days=60)
+
+    last_1m_students = Student.objects.filter(joining_at__isnull=False, joining_at__gte=one_month_ago).count()
+    last_2m_students = Student.objects.filter(joining_at__isnull=False, joining_at__gte=two_month_ago).count()
+    target_goal = 300
+    last_1m_percent = min(100, int(last_1m_students / target_goal * 100)) if target_goal else 0
+    last_2m_percent = min(100, int(last_2m_students / target_goal * 100)) if target_goal else 0
+
     return render(request, "dashboard.html", {
         "students": students,
         "total": total,
@@ -166,8 +176,12 @@ def dashboard(request):
         "counts": counts,
         "tech_labels": tech_labels,
         "tech_counts": tech_counts,
-        "installments": installments
-        
+        "installments": installments,
+        "last_1m_students": last_1m_students,
+        "last_2m_students": last_2m_students,
+        "last_1m_percent": last_1m_percent,
+        "last_2m_percent": last_2m_percent,
+        "target_goal": target_goal,
     })
 
 

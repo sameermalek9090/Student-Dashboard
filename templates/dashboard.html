@@ -426,12 +426,29 @@
 
             </div>
 
+            <div class="row mt-4">
+                <div class="col-md-4 mt-3">
+                    <div class="card-box text-center">
+                        <h6>Last 1 Month Join</h6>
+                        <h2>{{ last_1m_percent }}%</h2>
+                        <p>{{ last_1m_students }} / {{ target_goal }} students</p>
+                    </div>
+                </div>
 
-            <div class="col-md-4 mt-3">
-                <div class="card-box text-center">
-                    <h6>Target</h6>
-                    <h2>75%</h2>
-                    <p>{{ total }} / 300 students</p>
+                <div class="col-md-4 mt-3">
+                    <div class="card-box text-center">
+                        <h6>Last 2 Months Join</h6>
+                        <h2>{{ last_2m_percent }}%</h2>
+                        <p>{{ last_2m_students }} / {{ target_goal }} students</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-3">
+                    <div class="card-box text-center">
+                        <h6>Target</h6>
+                        <h2>75%</h2>
+                        <p>{{ total }} / {{ target_goal }} students</p>
+                    </div>
                 </div>
             </div>
 

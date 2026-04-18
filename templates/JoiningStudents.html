@@ -224,6 +224,64 @@ margin-right:5px !important;
 background:#4338ca !important;
 }
 
+/* MOBILE RESPONSIVE */
+
+.mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1200;
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        left: -240px;
+        transition: all .3s ease;
+    }
+    .sidebar.show {
+        left: 0;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .mobile-toggle {
+        display: block;
+    }
+    .header-card {
+        padding: 20px;
+    }
+    .ledger-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 15px;
+    }
+    .header-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .ledger-card {
+        padding: 15px;
+    }
+    table {
+        font-size: 14px;
+    }
+    .btn-view, .btn-edit {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
 </style>
 
 </head>
@@ -232,7 +290,7 @@ background:#4338ca !important;
 
 <!-- SIDEBAR -->
 
-<div class="sidebar text-center">
+<div class="sidebar text-center" id="sidebar">
 
 <img src="{% static 'images/logo.png' %}" alt="Way To Web">
 
@@ -409,7 +467,13 @@ $(document).ready(function () {
 
 });
 
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("show");
+}
+
 </script>
+
+<button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
 
 </body>
 
